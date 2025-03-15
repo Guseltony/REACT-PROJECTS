@@ -1,14 +1,15 @@
 import React from 'react'
-import {ToDo} from '../component/ToDo/ToDo'
+import {Task} from '../component/ToDo/Task'
 
 
 
 const ToDoApp = () => {
-    return (
-        <div>
-            <ToDo />
-        </div>
-    )
+  return (
+      <div>
+          ToDoApp
+          <Task />
+      </div>
+  )
 }
 
 export default ToDoApp
