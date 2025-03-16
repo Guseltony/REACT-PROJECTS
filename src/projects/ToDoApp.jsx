@@ -6,7 +6,6 @@ import {Task} from '../component/ToDo/Task'
 const ToDoApp = () => {
   return (
       <div>
-          ToDoApp
           <Task />
       </div>
   )
