@@ -4,7 +4,7 @@ import { logos } from '../assets/assets'
 export const Header = () => {
     return (
         <div className='py-10'>
-            <h1 className='ptSans text-6xl mb-8 font-bold text-center'>Turning Ideas into Interactive Magic – Explore My Frontend World</h1>
+            <h1 className='ptSans text-2xl lg:text-6xl mb-8 font-bold text-center'>Turning Ideas into Interactive Magic – Explore My Frontend World</h1>
             <div className='flex gap-4 justify-center items-center'>
                 <img 
                     src={logos.htmlLogo} 

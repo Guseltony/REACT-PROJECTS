@@ -11,7 +11,7 @@ const Sidebar = () => {
     }
     return (
         <>
-            <div className='flex flex-col pb-40'>
+            <div className='hidden md:flex flex-col pb-40'>
 
                 <div>
                     <button className='border border-white' onClick={handleShowProductivity}>Productivity</button>
