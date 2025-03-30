@@ -4,6 +4,7 @@ import javascriptLogo from './images/JavaScript.png'
 import typescriptLogo from './images/typescript.png'
 import htmlLogo from './images/html-css.png'
 import emptyList from "./images/emptyList.png";
+import weatherBg from "./images/weather/weather-bg.jpg";
 
 export const logos = {
   reactLogo,
@@ -11,5 +12,6 @@ export const logos = {
   javascriptLogo,
   typescriptLogo,
   htmlLogo,
-  emptyList
+  emptyList,
+  weatherBg
 };

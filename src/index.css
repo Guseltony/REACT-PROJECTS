@@ -21,6 +21,19 @@
     font-family: "PT Sans Narrow", sans-serif;
 }
 
+.Tektur {
+  font-family: "Tektur", sans-serif;
+}
+.script {
+  font-family: "Dancing Script", cursive;
+}
+.chakra {
+  font-family: "Chakra Petch", sans-serif;
+}
+.advent {
+  font-family: "Advent Pro", sans-serif;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

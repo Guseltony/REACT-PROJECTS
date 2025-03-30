@@ -84,9 +84,9 @@ export const Task = () => {
 
 
     return (
-        <div className='w-[90vw] md:w-[450px] min-h-[600px] relative rounded-4xl flex items-center justify-center'>
+        <div className='w-[90vw] md:w-[450px] min-h-[650px] relative rounded-2xl flex items-center justify-center'>
 
-            <div className='min-h-[600px] relative rounded-4xl shadow-2xl bg-black bg-opacity-20  w-[100%]'>
+            <div className='min-h-[650px] relative rounded-2xl shadow-2xl bg-black bg-opacity-20  w-[100%]'>
                 
                 <div className='bg-green-700 inline-flex w-10 h-10 justify-center items-center rounded-full absolute bottom-8 right-8 z-10 cursor-pointer' onClick={ () => setTaskForm(true) }>
                     <GrAdd size={25} />
