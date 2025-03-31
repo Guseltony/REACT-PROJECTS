@@ -128,9 +128,15 @@ export const Task = () => {
                 {
                     ( task.length > 0)  && (
                         <div className='flex gap-2 items-center justify-center border-b-2 border-gray-700 pb-2'>
-                            <button className={`${filterType === 'all' ? 'bg-green-500 border-0' : 'border-2'} px-2 py-2 font-bold cursor-pointer border-green-800 rounded-xl`} onClick={ () => setFilterType('all') }>All</button>
-                            <button className={`${filterType === 'pending' ? 'bg-green-500 border-0' : 'border-2'} px-2 py-2 font-bold cursor-pointer border-green-800 rounded-xl`} onClick={ () => setFilterType('pending') }>Pending</button>
-                            <button className={`${filterType === 'completed' ? 'bg-green-500 border-0' : 'border-2'} px-2 py-2 font-bold cursor-pointer border-green-800 rounded-xl`} onClick={ () => setFilterType('completed') }>Completed</button>
+                            <button 
+                                className={`${filterType === 'all' ? 'bg-green-500 border-0' : 'border-2'} px-2 py-2 font-bold cursor-pointer border-green-800 rounded-xl`} 
+                                onClick={ () => setFilterType('all') }>All</button>
+                            <button 
+                                className={`${filterType === 'pending' ? 'bg-green-500 border-0' : 'border-2'} px-2 py-2 font-bold cursor-pointer border-green-800 rounded-xl`} 
+                                onClick={ () => setFilterType('pending') }>Pending</button>
+                            <button 
+                                className={`${filterType === 'completed' ? 'bg-green-500 border-0' : 'border-2'} px-2 py-2 font-bold cursor-pointer border-green-800 rounded-xl`} 
+                                onClick={ () => setFilterType('completed') }>Completed</button>
                         </div>
                     )
                 }
@@ -143,8 +149,18 @@ export const Task = () => {
 
                             {
                                 (edittingId === id) ? <div className='border-b-2 border-green-500 px-4 py-4 flex items-center justify-between mt-4'>
-                                    <input type="text" onChange={(e) => { setEditValue(e.target.value) }} value={editValue} className='bg-transparent outline-none rounded-xl w-[90%] text-[#fff]' />
-                                    <IoIosCheckmarkCircle size={25} color='#fff' onClick={() => saveEdittedTask(id)} />
+                                    <input
+                                        type="text"
+                                        onChange={(e) => { setEditValue(e.target.value) }}
+                                        value={editValue}
+                                        className='bg-transparent outline-none rounded-xl w-[90%] text-[#fff]'
+                                        onKeyDown={(e) => e.key === 'Enter' && saveEdittedTask(id)} 
+                                    />
+                                    <IoIosCheckmarkCircle
+                                        size={25}
+                                        color='#fff'
+                                        onClick={() => saveEdittedTask(id)}
+                                    />
 
                                 </div> :
                                 <div className={`${completed ? 'bg-gray-400' : 'bg-green-500'}  px-4 py-4 flex items-center justify-between mt-4` }>
@@ -159,16 +175,29 @@ export const Task = () => {
                                         <div className='flex gap-2 '>
                                             {
                                                 !completed &&
-                                            <RiEdit2Fill size={25} color='#EE0097' onClick={() => editTask(id, text)} className='cursor-pointer' />
+                                                <RiEdit2Fill
+                                                    size={25}
+                                                    color='#EE0097'
+                                                    onClick={() => editTask(id, text)}
+                                                    className='cursor-pointer'
+                                                />
                                             }
-                                            <FaTrash size={25} color='#EE0030' onClick={() => deleteTask(id)} className='cursor-pointer' />
+                                            <FaTrash
+                                                size={25}
+                                                color='#EE0030'
+                                                onClick={() => deleteTask(id)}
+                                                className='cursor-pointer'
+                                            />
                                     </div>
                                 </div>
                             }
-
                         </div>
                     )) : <div className=' flex items-center justify-center mt-10 flex-col '>
-                            <img src={logos.emptyList} alt="empty list" className='w-[250px]' />
+                            <img
+                                src={logos.emptyList}
+                                alt="empty list"
+                                className='w-[250px]'
+                            />
                             <h1 className='text-2xl text-center text-gray-400 px-4'>Your list is looking a little lonely. <br /> Add some tasks by pressing the add button.</h1>
                     </div>
                 }
