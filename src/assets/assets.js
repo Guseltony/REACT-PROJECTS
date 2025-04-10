@@ -5,6 +5,7 @@ import typescriptLogo from './images/typescript.png'
 import htmlLogo from './images/html-css.png'
 import emptyList from "./images/emptyList.png";
 import weatherBg from "./images/weather/weather-bg.jpg";
+import movieBg from "./images/movieDataBAse/bg-1.jpg";
 
 export const logos = {
   reactLogo,
@@ -13,5 +14,6 @@ export const logos = {
   typescriptLogo,
   htmlLogo,
   emptyList,
-  weatherBg
+  weatherBg,
+  movieBg
 };

@@ -24,6 +24,10 @@ const Sidebar = () => {
                             <NavLink to={'/weather'} className='px-2 py-2 bg-amber-600'>
                                 Weather-App
                             </NavLink>
+
+                            <NavLink to={'/g-movie'} className='px-2 py-2 bg-amber-600'>
+                                G-Movie
+                            </NavLink>
                         </div>)
                     }
                 </div>

@@ -3,6 +3,7 @@ import ToDoApp from './projects/ToDoApp'
 import Sidebar from './component/sidebar'
 import WeatherApp from './projects/WeatherApp'
 import { Header } from './component/Header'
+import MovieApp from './projects/MovieApp'
 
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
           <div className="w-[100%] border-2 border-yellow-500 mt-[300px] lg:mt-72 flex justify-center items-center">
             <Routes>
               <Route path='/to-do' element={<ToDoApp />} />
-              <Route path='/weather' element={ <WeatherApp/> } />
+              <Route path='/weather' element={<WeatherApp />} />
+              <Route path='/G-Movie' element={<MovieApp />} />
             </Routes>
           </div>
         </div>

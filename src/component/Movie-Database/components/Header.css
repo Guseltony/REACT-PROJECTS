@@ -1,0 +1,21 @@
+.header {
+  border: 2px solid red;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-inline: 8px;
+  padding-block: 4px;
+  z-index: 3333;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #fff, #000, #000, #000);
+}
+.header ul {
+  display: flex;
+  align-items: center;
+}
+.header ul li:not(:first-child) {
+  margin-left: 40px;
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { IoLocation, IoSearchCircle, IoSearchCircleOutline } from "react-icons/io5";
 import { logos } from '../../assets/assets';
-import { TbTemperatureCelsius } from 'react-icons/tb';
+import { TbTemperatureCelsius, TbTemperatureFahrenheit } from 'react-icons/tb';
 import axios from 'axios';
 
 export const Weather = () => {
@@ -13,6 +13,9 @@ export const Weather = () => {
     const [error, setError] = useState(null);
     const [weatherUrl, setWeatherUrl] = useState(null);
     const [forecastArray, setForecastArray] = useState([])
+    const [tempFormat, setTempFormat] = useState('celsius')
+    const [celsTemp, setCelsTemp] = useState(true)
+    const [fahrTemp, setFahrTemp] = useState(false)
 
 
     const Months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -37,6 +40,16 @@ export const Weather = () => {
         backgroundPosition: 'center'
     };
 
+    const handleCelsiusTemp = () => {
+        setTempFormat('celsius')
+        setCelsTemp(true)
+        setFahrTemp(false)
+    }
+    const handleFahrenTemp = () => {
+        setTempFormat('fahrenheit')
+        setCelsTemp(false)
+        setFahrTemp(true)
+    }
 
 
     useEffect(() => {
@@ -79,13 +92,13 @@ export const Weather = () => {
 
     return (
         <div 
-            className=' w-[95%] md:w-[85%] flex justify-center items-center min-h-[650px]' 
+            className=' w-[100%] md:w-[85%] flex justify-center items-center min-h-[650px]' 
             style={styles}
         >
-            <div className='relative w-[90%] md:w-[90%] flex flex-col min-h-[550px] rounded-4xl backdrop-filter backdrop-blur-sm bg-opacity-10 bg-black/50 p-4'>
+            <div className='relative w-[95%] md:w-[90%] flex flex-col min-h-[550px] rounded-4xl backdrop-filter backdrop-blur-sm bg-opacity-10 bg-black/50 p-4'>
                 {/* Search Button */}
                 <IoSearchCircleOutline 
-                    size={50} 
+                    size={40} 
                     color='#fff' 
                     onClick={() => setShowSearch(true)} 
                     className={`${showSearch ? 'hidden' : 'block'} absolute top-4 left-8 cursor-pointer`} 
@@ -140,11 +153,29 @@ export const Weather = () => {
                 {!loading && currentWeather && (
                     <div className="weather-details flex flex-col md:flex-row md:flex-wrap justify-around items-center text-white mt-10">
                         <div className="text-center md:text-left md:mb-0">
-                            <div className="inline-block relative temp-reading">
-                                <h3 className='advent inline-flex items-center justify-center text-9xl'>
-                                    {Math.round(currentWeather.main.temp)}
-                                </h3>
-                                <TbTemperatureCelsius className='script absolute -right-6 top-2' size={30} />
+                            {
+                                tempFormat  === 'celsius' ? 
+                                    <div className="inline-block relative temp-reading">
+                                        <h3 className='advent inline-flex items-center justify-center text-9xl'>
+                                            {Math.round(currentWeather.main.temp)}
+                                        </h3>
+                                        <TbTemperatureCelsius className='script absolute -right-6 top-2' size={30} />
+                                    </div> :
+                                    <div className="inline-block relative temp-reading">
+                                        <h3 className='advent inline-flex items-center justify-center text-9xl'>
+                                            {Math.round(Math.round(currentWeather.main.temp) * (9/5) + 32)}
+                                        </h3>
+                                        <TbTemperatureFahrenheit className='script absolute -right-6 top-2' size={30} />
+                                    </div>
+                            }
+                            <br />
+                            <div className="tempFormat-btn w-[80px] h-[40px] inline-flex flex-row rounded-full bg-transparent bg-gradient-to-br from-gray-800 to-gray-600 box-border shadow-[inset_2px_2px_0_#7d7c7e,inset_-2px_-2px_0_#1c1c1c] items-center justify-around mb-4">
+                                <div className={`${celsTemp ? 'bg-green-600' : ''} rounded-full w-[30px] h-[30px] flex items-center justify-center`} onClick={() => handleCelsiusTemp()}>
+                                    <TbTemperatureCelsius size={15} strokeWidth={3} />
+                                </div>
+                                <div className={`${fahrTemp ? 'bg-green-600' : ''} rounded-full w-[30px] h-[30px] flex items-center justify-center`} onClick={() => handleFahrenTemp()}>
+                                    <TbTemperatureFahrenheit size={15} strokeWidth={3} />
+                                </div>
                             </div>
                             <h3 className='text-xl capitalize Tektur'>
                                 {currentWeather.weather[0].description}
