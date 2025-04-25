@@ -215,7 +215,7 @@ export const Weather = () => {
                                     <img 
                                         src={`https://openweathermap.org/img/wn/${list.weather[0].icon}.png`} 
                                         alt={list.weather[0].description}
-                                        className="mx-auto w-12 h-12"
+                                        className="mx-auto w-12 h-12" 
                                     />
                                     
                                     {/* Temperature */}
