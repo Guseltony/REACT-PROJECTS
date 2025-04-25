@@ -170,10 +170,10 @@ export const Weather = () => {
                             }
                             <br />
                             <div className="tempFormat-btn w-[80px] h-[40px] inline-flex flex-row rounded-full bg-transparent bg-gradient-to-br from-gray-800 to-gray-600 box-border shadow-[inset_2px_2px_0_#7d7c7e,inset_-2px_-2px_0_#1c1c1c] items-center justify-around mb-4">
-                                <div className={`${celsTemp ? 'bg-green-600' : ''} rounded-full w-[30px] h-[30px] flex items-center justify-center`} onClick={() => handleCelsiusTemp()}>
+                                <div className={`${celsTemp ? 'bg-green-600' : ''} rounded-full w-[30px] h-[30px] flex items-center justify-center transition-all ease-in duration-500`} onClick={() => handleCelsiusTemp()}>
                                     <TbTemperatureCelsius size={15} strokeWidth={3} />
                                 </div>
-                                <div className={`${fahrTemp ? 'bg-green-600' : ''} rounded-full w-[30px] h-[30px] flex items-center justify-center`} onClick={() => handleFahrenTemp()}>
+                                <div className={`${fahrTemp ? 'bg-green-600' : ''} rounded-full w-[30px] h-[30px] flex items-center justify-center transition-all ease-in duration-500`} onClick={() => handleFahrenTemp()}>
                                     <TbTemperatureFahrenheit size={15} strokeWidth={3} />
                                 </div>
                             </div>
